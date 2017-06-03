@@ -49,5 +49,10 @@ namespace Articulate
                 System.Uri.SchemeDelimiter +
                 requestUrl.Authority;
         }
+
+        public static string GetPath(this Uri url)
+        {
+            return $"{url.Scheme}{Uri.SchemeDelimiter}{url.Authority}{url.AbsolutePath}";
+        }
     }
 }
