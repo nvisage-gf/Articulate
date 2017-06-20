@@ -363,7 +363,7 @@ WHERE cmsContentType.alias = @contentTypeAlias AND cmsPropertyType.alias = @prop
             //cache this result for a short amount of time
             
             return (PostsByTagModel) appContext.ApplicationCache.RuntimeCache.GetCacheItem(
-                string.Concat(typeof(UmbracoHelperExtensions).Name, "GetContentByTag", masterModel.RootBlogNode.Id, tagGroup),
+                string.Concat(typeof(UmbracoHelperExtensions).Name, "GetContentByTag", masterModel.RootBlogNode.Id, tagGroup, tag, page, pageSize),
                 GetResult, TimeSpan.FromSeconds(30));
 #endif
         }
